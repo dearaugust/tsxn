@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.google.com/schemas/sitemap/0.84'>
+{dede:arclist typeid='0' row='1000'} 
+<url><loc>[field:global.cfg_basehost /][field:arcurl/]</loc><lastmod>[field:pubdate function="MyDate('Y-m-d',@me)"/]</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+{/dede:arclist}
+{dede:channelartlist row=1000}
+<url><loc>{dede:global.cfg_basehost/}{dede:field name='typeurl'/}</loc><lastmod>{dede:field name='typeid' runphp='yes'}@me=date('Y-m-d');{/dede:field}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+{dede:channel type='son' row='1000'}
+ <url><loc>[field:global.cfg_basehost /][field:typelink/]</loc><lastmod>[field:typeid runphp='yes']@me=date('Y-m-d');[/field:typeid]</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+{/dede:channel}
+{/dede:channelartlist}
+</urlset>

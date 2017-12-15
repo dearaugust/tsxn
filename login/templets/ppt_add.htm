@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>增加幻灯</title>
+<link href='css/base.css' rel='stylesheet' type='text/css'>
+<script language="javascript" src="../include/dedeajax2.js"></script>
+<script language='javascript' src='js/main.js'></script>
+<script language="javascript">
+function checkSubmit()
+{
+	if(document.form1.title.value=="")
+	{
+		alert("幻灯标题不能为空！");
+		document.form1.title.focus();
+		return false;
+	}
+}
+
+</script>
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6">
+<tr>
+    <td height="28" background="images/tbg.gif">
+   	&nbsp;<b><a href="ppt_main.php"><u>幻灯管理</u></a></b> &gt;&gt; 增加幻灯</td>
+</tr>
+<tr>
+    <td height="200" bgcolor="#FFFFFF" valign="top">
+	<table width="100%" border="0" cellspacing="4" cellpadding="4">
+	
+<form name="form1" action="ppt_add.php" enctype="multipart/form-data" method="post" onSubmit="return checkSubmit()">
+<input type='hidden' name='dopost' value='save'>
+
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90">&nbsp;幻灯标题：</td>
+<td width='710'><input name="title" type="text" id="title" style="width:388px" /></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90">&nbsp;幻灯分类：</td>
+<td width='710'>
+<select name='typeid' style='width:150' id="typeid">
+<?php echo $option;?>
+</select>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<style>
+.divpre img{height:50px;}
+</style>
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90"> &nbsp;幻灯大图：</td>
+<td width="550">
+<table width="100%" border="0" cellspacing="1" cellpadding="1">
+<tr>
+<td height="30">
+<input name="pic" type="text" id="picname" style="width:220px" value="<?php echo $myrow['pic']?>" />
+<input type="button"  value="本地上传" style="width:70px;cursor:pointer;" />
+<iframe name='uplitpicfra' id='uplitpicfra' src='' width='200' height='200' style='display:none'></iframe>
+<span class="litpic_span"><input name="litpic" type="file" id="litpic"  onChange="SeePicNew(this, 'divpicview', 'uplitpicfra', 165, 'ppt_add.php','save');" size="1" class='np coolbg'/></span>
+<input type="button" name="Submit2" value="站内选择" style="margin-left:8px;" onClick="SelectImageN('form1.pic','imgstick','picview');" class='np coolbg'/>
+<input type='checkbox' class='np' name='ddisremote' value='1'>远程 
+</td>
+</tr>
+</table>
+</td>
+<td width="160" align="center">
+<div id='divpicview' class='divpre'><img src="<?php if($myrow['pic']!="") echo $myrow['pic']; else echo "images/pview.gif";?>"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90"> &nbsp;幻灯小图：</td>
+<td width="550">
+<table width="100%" border="0" cellspacing="1" cellpadding="1">
+<tr>
+<td height="30">
+<input name="pic2" type="text" id="pic2" style="width:220px" value="<?php echo $myrow['pic2']?>" />
+<input type="button"  value="本地上传" style="width:70px;cursor:pointer;" />
+<iframe name='upsmallpicfra' id='upsmallpicfra' src='' width='200' height='200' style='display:none'></iframe>
+<span class="litpic_span"><input name="smallpic" type="file" id="smallpic"  onChange="SeePicNew(this, 'divsmallpicview', 'upsmallpicfra', 165, 'ppt_add.php', 'save', 'smallpic', 'pic2');" size="1" class='np coolbg' style="cursor:pointer;height:20px;margin-left:-20px;opacity:0;width:85px;"/></span>
+<input type="button" name="Submit2" value="站内选择" style="margin-left:8px;" onClick="SelectImageN('form1.pic2','imgstick','smallpicview');" class='np coolbg'/>
+<input type='checkbox' class='np' name='ddisremote2' value='1'>远程 
+</td>
+</tr>
+</table>
+</td>
+<td width="160" align="center">
+<div id='divsmallpicview' class='divpre'><img src="<?php if($myrow['pic2']!="") echo $myrow['pic2']; else echo "images/pview.gif";?>"></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90">&nbsp;内容描述：</td>
+<td width='710'>
+<textarea class="alltxt" id="content" rows="4" style="height:50px" cols="70" name="content"></textarea>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90">&nbsp;链接地址：</td>
+<td width='710'>
+<input type="text" size="60" name="url" value=""/>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td height="24" colspan="5" class="bline">
+<table width="800" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="90">&nbsp;排序：</td>
+<td width='710'>
+<input name="orderid" type="text" id="orderid" onKeyUp="this.value=this.value.replace(/\D/g,'')" value="" size="8" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td height="51">&nbsp;</td>
+<td>
+<input type="submit" name="Submit" value=" 提 交 " class="np coolbg" />　 　
+<input type="reset" name="Submit" value=" 返 回 " onClick="location.href='<?php echo $ENV_GOBACK_URL?>';" class="np coolbg" />         
+</td>
+</tr>
+
+</form>
+      </table>
+	 </td>
+</tr>
+</table>
+</body>
+</html>

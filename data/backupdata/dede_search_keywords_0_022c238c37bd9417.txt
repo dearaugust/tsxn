@@ -1,0 +1,6 @@
+INSERT INTO `dede_search_keywords` VALUES('1','在这里搜索...','在这里搜索... 在这里 搜索','3','0','1510538847','0','0');
+INSERT INTO `dede_search_keywords` VALUES('2','烯牛','烯牛','1','0','1510538390','0','0');
+INSERT INTO `dede_search_keywords` VALUES('3','测试','测试','3','3','1510542003','0','0');
+INSERT INTO `dede_search_keywords` VALUES('4','奥术大师多','奥术大师多 大师 奥术','1','0','1510538971','0','0');
+INSERT INTO `dede_search_keywords` VALUES('5','加盟','加盟','5','0','1510539520','0','0');
+INSERT INTO `dede_search_keywords` VALUES('6','撒打','撒打','23','0','1510540199','0','0');

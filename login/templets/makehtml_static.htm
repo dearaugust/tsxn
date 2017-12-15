@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>设置(动静)态</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<table width="98%" border="0" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6" align="center">
+  <form name="form1" action="makehtml_static.php" method="post">
+  <input type="hidden" name="action" value="make" />
+   <tr>
+    <td height="28" colspan="2" bgcolor="#EDF9D5" background='images/tbg.gif' style="padding-left:10px;">
+	    <strong>一键设置全站：</strong></td>
+    </td>
+    </tr>
+    <tr>
+      <td width="30%" height="30"  bgcolor="#FFFFFF">&nbsp;&nbsp;更新选项：</td>
+      <td valign="top" bgcolor="#FFFFFF">
+	   <input name="uptype" id="uptype1" type="radio" class="np" value="dynamic" checked="checked" />
+	   设置整站为动态(设置后即刻生效)
+	   <input name="uptype" id="uptype2" type="radio" class="np" value="static" />
+	   设置整站为静态(设置后需要生成才生效)
+	   </td>
+    </tr>
+
+	<tr>
+      <td height="31" colspan="2" bgcolor="#ffffff" align="center" style="padding-top:6px">
+       <input type="submit" name="Submit" value="提交设置" class="coolbg" />
+      </td>
+
+	  
+    </tr>
+  </form>
+
+  <tr bgcolor="#F9FCEF">
+    <td height="20" colspan="2">
+    <table width="100%">
+     <tr>
+      <td width="74%"></td>
+
+        </tr>
+      </table>
+     </td>
+   </tr>
+
+</table>
+</body>
+</html>

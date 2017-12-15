@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.google.com/schemas/sitemap/0.84'>
+<url><loc>http://localhost/plus/view.php?aid=30</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=29</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=28</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=19</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=22</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=20</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=14</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=21</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=27</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=25</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=23</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=26</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=24</loc><lastmod>2017-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=3</loc><lastmod>2017-11-10</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=2</loc><lastmod>2017-11-10</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url><url><loc>http://localhost/plus/view.php?aid=1</loc><lastmod>2017-11-10</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://localhost/plus/list.php?tid=1</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=2</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=3</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=4</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://localhost/plus/list.php?tid=5</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://localhost/plus/list.php?tid=6</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=7</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=8</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+ <url><loc>http://localhost/plus/list.php?tid=9</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://localhost/plus/list.php?tid=10</loc><lastmod>2017-11-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+</urlset>

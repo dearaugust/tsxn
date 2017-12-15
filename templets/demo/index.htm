@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{dede:global.cfg_webname/}</title>
+  <meta name="keywords" content="{dede:global.cfg_keywords/}"/>
+  <meta name="description" content="{dede:global.cfg_description/}"/>
+  <meta name="author" content="" />
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="/css/animate.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="/css/icomoon.css">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <!-- Flexslider  -->
+  <link rel="stylesheet" href="/css/flexslider.css">
+  <!-- Owl Carousel  -->
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <!-- Theme style  -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Modernizr JS -->
+  <script src="/js/modernizr-2.6.2.min.js"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+  <div class="fh5co-loader"></div>
+
+  <div id="page">
+    {dede:include filename="head.htm"/}
+
+    <aside id="fh5co-hero" class="js-fullheight">
+      <div class="flexslider js-fullheight">
+        <ul class="slides">
+          {dede:arclist typeid='1' row='' titlelen='50' channelid='17' addfields='bigpic' flag='f' isweight='' orderby='weight' orderway='asc' limit=''}
+          <li style="background-image: url('[field:bigpic function=GetImgUrl(@me)/]');">
+            <!-- <div class="overlay-gradient"></div> -->
+            <div class="container">
+              <div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+                <div class="slider-text-inner">
+                  <div class="desc">
+                    <h2>[field:title/]</h2>
+                    <p>[field:description function=cn_substr(@me,150)/]...</p>
+                    <p>
+                      <a href="[field:arcurl/]" class="btn btn-primary btn-outline btn-lg">了解更多</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          {/dede:arclist}
+        </ul>
+      </div>
+    </aside>
+
+    <div id="fh5co-services" class="fh5co-bg-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 text-center">
+            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+              <span class="icon">
+                <i class="icon-credit-card"></i>
+              </span>
+              {dede:arclist typeid='7' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+              <h3>[field:typename/]</h3>
+              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+              {/dede:arclist}
+              <p>
+                <a href="{dede:type typeid=7}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 text-center">
+            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+              <span class="icon">
+                <i class="icon-layout"></i>
+              </span>
+              {dede:arclist typeid='8' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+              <h3>[field:typename/]</h3>
+              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+              {/dede:arclist}
+              <p>
+                <a href="{dede:type typeid=8}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 text-center">
+            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+              <span class="icon">
+                <i class="icon-paper-plane"></i>
+              </span>
+              {dede:arclist typeid='9' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+              <h3>[field:typename/]</h3>
+              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+              {/dede:arclist}
+              <p>
+                <a href="{dede:type typeid=9}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fh5co-product">
+      <div class="container">
+        <div class="row animate-box">
+          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            {dede:type typeid=1}
+            <span>Cool Stuff</span>
+            <h2>[field:typename/]</h2>
+            <p>&ldquo;[field:content function=cn_substr(@me,300)/].&rdquo;</p>
+            {/dede:type}
+          </div>
+        </div>
+        <div class="row">
+          {dede:arclist typeid='1' row='6' titlelen='50' channelid='' addfields='' flag='c' isweight='' orderby='weight' orderway='asc' limit=''}
+          <div class="col-md-4 text-center animate-box">
+            <div class="product">
+              <div class="product-grid" style="background-image:url([field:litpic/]);background-position:center;">
+                <div class="inner">
+                  <p>
+                    <a href="[field:arcurl/]" class="icon">
+                      <i class="icon-eye"></i>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="desc">
+                <h3>
+                  <a href="[field:arcurl/]">[field:title/]</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          {/dede:arclist}
+
+        </div>
+      </div>
+    </div>
+
+    <div id="fh5co-testimonial" class="fh5co-bg-section">
+      <div class="container">
+        <div class="row animate-box">
+          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            <span>new release</span>
+            <h2>新品发布</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row animate-box">
+              <div class="owl-carousel owl-carousel-fullwidth">
+                {dede:arclist typeid='1' row='3' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='weight' orderway='asc' limit=''}
+                <div class="item">
+                  <div class="testimony-slide active text-center">
+                    <figure>
+                      <a href="[field:arcurl/]"><img src="[field:litpic/]" alt="product"></a>
+                    </figure>
+                    <span>[field:title/]</span>
+                    <blockquote>
+                      <p>&ldquo;[field:description function=cn_substr(@me,100)/].&rdquo;</p>
+                    </blockquote>
+                  </div>
+                </div>
+                {/dede:arclist}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url('{dede:myppt typeid=2 row=6}[field:pic/]{/dede:myppt}');">
+      <div class="container">
+        <div class="row">
+          <div class="display-t">
+            <div class="display-tc">
+              <div class="col-md-3 col-sm-6 animate-box">
+                <div class="feature-center">
+                  <span class="icon">
+                    <i class="icon-eye"></i>
+                  </span>
+                  <span class="counter js-counter" data-from="0" data-to="{dede:global.cfg_browse/}" data-speed="4000" data-refresh-interval="50">1</span>
+                  <span class="counter-label">浏览量</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 animate-box">
+                <div class="feature-center">
+                  <span class="icon">
+                    <i class="icon-shopping-cart"></i>
+                  </span>
+
+                  <span class="counter js-counter" data-from="0" data-to="{dede:global.cfg_product/}" data-speed="4000" data-refresh-interval="50">1</span>
+                  <span class="counter-label">我们的产品</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 animate-box">
+                <div class="feature-center">
+                  <span class="icon">
+                    <i class="icon-shop"></i>
+                  </span>
+                  <span class="counter js-counter" data-from="0" data-to="{dede:global.cfg_channel/}" data-speed="4000" data-refresh-interval="50">1</span>
+                  <span class="counter-label">我们的渠道</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 animate-box">
+                <div class="feature-center">
+                  <span class="icon">
+                    <i class="icon-clock"></i>
+                  </span>
+                  <span class="counter js-counter" data-from="0" data-to="{dede:global.cfg_time/}" data-speed="4000" data-refresh-interval="50">1H</span>
+                  <span class="counter-label">研发时间</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {dede:include filename="footer.htm"/}
+  </div>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop">
+      <i class="icon-arrow-up"></i>
+    </a>
+  </div>
+
+  <!-- jQuery -->
+  <script src="/js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="/js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <!-- Carousel -->
+  <script src="/js/owl.carousel.min.js"></script>
+  <!-- countTo -->
+  <script src="/js/jquery.countTo.js"></script>
+  <!-- Flexslider -->
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Main -->
+  <script src="/js/main.js"></script>
+  {dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+INSERT INTO `dede_flink` VALUES('1','1','http://www.beixianggroup.com/','河北贝翔科技集团有限公司','','','','1510618713','0','2');
+INSERT INTO `dede_flink` VALUES('2','1','http://www.jianhuakeji.com/','唐山建华科技发展有限责任公司','','','','1510618788','0','2');

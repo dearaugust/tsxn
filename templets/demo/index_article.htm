@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{dede:global.cfg_webname/}</title>
+	<meta name="keywords" content="{dede:global.cfg_keywords/}"/>
+	<meta name="description" content="{dede:global.cfg_description/}"/>
+	<meta name="author" content="gettemplates.co" />
+
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+		{dede:include filename="head.htm"/}
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url('{dede:type typeid=5}[field:typelitpic/]{/dede:type}');background-position:center;">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								{dede:type typeid=5}
+								<h1>[field:typenamedir/]</h1>
+								<h2>[field:typename/]</h2>
+								{/dede:type}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="fh5co-about">
+			<div class="container">
+				<div class="about-content">
+					<div class="row animate-box">
+						{dede:type typeid=}
+						<div class="col-md-12">
+							<div class="desc">
+								<h3>[field:typename/]</h3>
+								<p>[field:content/]</p>
+							</div>
+						</div>
+						{/dede:type}
+					</div>
+				</div>
+				<!-- <div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						{dede:type typeid=29}
+						<span>[field:typenamedir/]</span>
+						<h2>[field:typename/]</h2>
+						<p>[field:content/].</p>
+						{/dede:type}
+					</div>
+				</div>
+				<div class="row">
+					{dede:arclist typeid='29' row='3' titlelen='50' channelid='1' addfields='body' flag='' isweight='' orderby='' orderway='' limit=''}
+					<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+						<div class="fh5co-staff">
+							<img src="[field:litpic/]" alt="Free HTML5 Templates by gettemplates.co">
+							<h3>[field:title/]</h3>
+							<strong class="role">[field:shorttitle/]</strong>
+							<p>[field:body function="cn_substr(@me,200)"/].</p>
+						</div>
+					</div>
+					{/dede:arclist}
+				</div> -->
+			</div>
+		</div>
+
+		{dede:include filename="footer.htm"/}
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop">
+			<i class="icon-arrow-up"></i>
+		</a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="/js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="/js/jquery.flexslider-min.js"></script>
+
+	<!-- Main -->
+	<script src="/js/main.js"></script>
+	{dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>

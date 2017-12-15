@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset>
+<url>
+    <loc>{dede:global.cfg_basehost /}</loc>
+    <lastmod>{dede:arclist row=1 titlelen=24 orderby=pubdate}
+    [field:pubdate function=strftime('%Y-%m-%d',@me)/]
+    {/dede:arclist}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+{dede:channel row='23' type='top'}
+<url>
+<loc>[field:global.cfg_basehost /][field:typelink /]</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+{/dede:channel}
+{dede:arclist row=2000 orderby=pubdate}
+<url>
+    <loc>[field:global.cfg_basehost /][field:arcurl/]</loc>
+    <lastmod>[field:pubdate function=strftime('%Y-%m-%d',@me)/]</lastmod>
+    <changefreq>0.7</changefreq>
+</url>
+{/dede:arclist}
+</urlset>

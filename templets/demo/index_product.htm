@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{dede:global.cfg_webname/}</title>
+	<meta name="keywords" content="{dede:global.cfg_keywords/}"/>
+	<meta name="description" content="{dede:global.cfg_description/}"/>
+	<meta name="author" content="gettemplates.co" />
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+
+		{dede:include filename="head.htm"/}
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({dede:type typeid=}[field:typelitpic/]{/dede:type});background-position:center;">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								{dede:type typeid=1}
+								<h1>[field:typenamedir/]</h1>
+								<h2>[field:typename/]</h2>
+								{/dede:type}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="fh5co-product">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<span>Cool Stuff</span>
+						<h2>所有产品</h2>{dede:field.currentstyle/}
+						<ul class="product-list">
+							{dede:channel typeid='1' currentstyle="
+							<li class='focus'>
+								<a href='~typelink~' title='~typename~'>~typename~</a>
+							</li>"}
+							<li>
+								<a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a>
+							</li>
+							{/dede:channel}
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+                    {dede:list pagesize='9' titlelen='250' orderby='weight' orderway='asc'}
+                    <div class="col-md-4 text-center animate-box">
+                        <div class="product">
+                            <div class="product-grid" style="background-image:url([field:litpic/]);">
+                                <div class="inner">
+                                    <p>
+                                        <a href="[field:arcurl/]" class="icon">
+                                            <i class="icon-eye"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h3>
+                                    <a href="[field:arcurl/]">[field:title/]</a>
+                                    [field:body2/][field:body/]
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    {/dede:list}
+					<div class="my_pages"><ul>{dede:pagelist listitem="index,end,pre,next,pageno" listsize="3" pagelang=""/}</ul></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div id="fh5co-started">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Newsletter</h2>
+						<p>Just stay tune for our latest Product. Now you can subscribe</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2">
+						<form class="form-inline">
+							<div class="col-md-6 col-sm-6">
+								<div class="form-group">
+									<label for="email" class="sr-only">Email</label>
+									<input type="email" class="form-control" id="email" placeholder="Email">
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<button type="submit" class="btn btn-default btn-block">Subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		{dede:include filename="footer.htm"/}
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop">
+			<i class="icon-arrow-up"></i>
+		</a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="/js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="/js/main.js"></script>
+	{dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>

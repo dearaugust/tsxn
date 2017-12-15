@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+	<meta name="keywords" content="{dede:field.keywords/}"/>
+	<meta name="description" content="{dede:field.description function=html2text(@me)/}"/>
+	<meta name="author" content="gettemplates.co" />
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+		{dede:include filename="head.htm"/}
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({dede:field.slide/});background-position:center;">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								{dede:type typeid=1}
+								<h1>[field:typenamedir/]</h1>
+								<h2>[field:typename/]</h2>
+								{/dede:type}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="fh5co-product">
+			<div class="container">
+				<h2 style="text-align:center;color:#424242">{dede:field.title/}</h2>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 animate-box">
+						<div class="owl-carousel owl-carousel-fullwidth product-carousel">
+							{dede:productimagelist}
+							<div class="item">
+								<div class="active text-center">
+									<figure>
+										<img src="[field:imgsrc/]" alt="[field:text/]">
+									</figure>
+								</div>
+							</div>
+							{/dede:productimagelist}
+						</div>
+						<!-- <div class="row animate-box">
+							<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+								<h2>Hauteville Rocking Chair</h2>
+								<p>
+									<a href="#" class="btn btn-primary btn-outline btn-lg">Add to Cart</a>
+									<a href="#" class="btn btn-primary btn-outline btn-lg">Compare</a>
+								</p>
+							</div>
+						</div> -->
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="fh5co-tabs animate-box">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs fh5co-tab-nav" role="tablist">
+								<li role="presentation" class="active">
+									<a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+										<span class="hidden-xs">{dede:field.title_1/}</span>
+									</a>
+								</li>
+								<li role="presentation">
+									<a href="#two" aria-controls="two" role="tab" data-toggle="tab">
+										<span class="hidden-xs">{dede:field.title_2/}</span>
+									</a>
+								</li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content fh5co-tab-content-wrap">
+								<div role="tabpanel" class="tab-pane active animate-box" data-animate-effect="fadeIn" id="one">
+									<div class="col-md-12">
+										<p>{dede:field.body/}</p>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane animate-box" data-animate-effect="fadeIn" id="two">
+									<div class="col-md-12">
+										<p>{dede:field.body2/}</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		{dede:include filename="footer.htm"/}
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop">
+			<i class="icon-arrow-up"></i>
+		</a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="/js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="/js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="/js/main.js"></script>
+	<script type="text/javascript">
+		$('#myTabs a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+		$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+		$('#myTabs a:first').tab('show') // Select first tab
+		$('#myTabs a:last').tab('show') // Select last tab
+		$('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
+	</script>
+	{dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>

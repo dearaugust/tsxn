@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{dede:global.cfg_webname/}</title>
+	<meta name="keywords" content="{dede:global.cfg_keywords/}"/>
+	<meta name="description" content="{dede:global.cfg_description/}"/>
+	<meta name="author" content="gettemplates.co" />
+
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			changeAuthCode();
+			document.forms[0].reset();
+		});
+
+		function changeAuthCode() {
+			var num = new Date().getTime();
+			var rand = Math.round(Math.random() * 10000);
+			num = num + rand;
+			$('#ver_code').css('visibility', 'visible');
+			if ($("#vdimgck")[0]) {
+				$("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
+			}
+			return false;
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+		{dede:include filename="head.htm"/}
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({dede:type typeid=}[field:typelitpic/]{/dede:type});background-position:center;">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="display-t">
+							<div class="display-tc animate-box" data-animate-effect="fadeIn">
+								{dede:type typeid=}
+								<h1>[field:typenamedir/]</h1>
+								<h2>[field:typename/]</h2>
+								{/dede:type}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="fh5co-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-md-push-1 animate-box">
+
+						<div class="fh5co-contact-info">
+							<h3>联系我们</h3>
+							<ul>
+								<li class="address">{dede:global.cfg_add/}</li>
+								<li class="tel">
+									<a href="tel://{dede:global.cfg_tel/}">{dede:global.cfg_tel/}</a>
+								</li>
+								<li class="mobile">
+									<a href="tel://{dede:global.cfg_mobile/}">{dede:global.cfg_mobile/}</a>
+								</li>
+								<li class="email">
+									<a href="mailto:{dede:global.cfg_mail/}">{dede:global.cfg_mail/}</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="col-md-6 animate-box">
+						<h3>留言反馈</h3>
+						<form name="leaveMessage" action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return CheckMessage();">
+							<input type="hidden" name="action" value="post" />
+							<input type="hidden" name="diyid" value="1" />
+							<input type="hidden" name="do" value="2" />
+							<input type="hidden" name="time" id="time" value="" />
+							<input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;theme,text;message,multitext;time,text" />
+							<input type="hidden" name="dede_fieldshash" value="3bd5fbd947c6a92384422b9ad3bc80ea" />
+							<div class="row form-group">
+								<div class="col-md-6">
+									<!-- <label for="fname">First Name</label> -->
+									<input type="text" name="name" id="name" class="form-control" placeholder="您的名字">
+								</div>
+								<div class="col-md-6">
+									<!-- <label for="lname">Last Name</label> -->
+									<input type="text" name="tel" id="tel" class="form-control" placeholder="您的手机号码">
+								</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<!-- <label for="email">Email</label> -->
+									<input type="text" name="email" id="email" class="form-control" placeholder="您的邮箱">
+								</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+									<input type="text" name="theme" id="theme" class="form-control" placeholder="您的主题">
+								</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<!-- <label for="message">Message</label> -->
+									<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="留言内容"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group ">
+								<input type="submit" value="立即提交" class="btn btn-primary">
+								<label id="label_verifycode" for="validate">验证码</label>
+								<input id="vdcode" class="user_input" style="width:80px;" type="text" name="validate" tabindex="5">
+								<img id="vdimgck" src="/include/vdimgck.php" class="user_verifycode" alt="验证码图片" title="验证码图片" align="absmiddle" onclick="this.src='/include/vdimgck.php?tag='+Math.random();"
+								    style="cursor:pointer;">
+								<span class="user_change_verifycode">
+									<a href="javascript:;" onClick="changeAuthCode();">看不清？</a>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function () {
+				var nowDate = new Date();
+				var str = nowDate.getFullYear() + "-" + (nowDate.getMonth() + 1) + "-" + nowDate.getDate() + " " + nowDate.getHours() +
+					":" + nowDate.getMinutes() + ":" + nowDate.getSeconds();
+				document.getElementById("time").value = str;
+			}
+
+			function CheckMessage() {
+				//正则表达式判断是否为手机号
+				var regPhone = new RegExp(/^1[3|4|5|8][0-9]\d{4,8}$/);
+				var reg = document.leaveMessage.tel.value
+				if (document.leaveMessage.name.value == "") {
+					alert("抱歉，您的姓名不能为空！");
+					document.leaveMessage.name.focus();
+					return false;
+				}
+				if (!regPhone.test(reg)) {
+					alert("抱歉，您输入的号码格式不正确！");
+					document.leaveMessage.tel.parentNode.classList.add('has-error');
+					document.leaveMessage.tel.focus();
+					return false;
+				}
+				if (document.leaveMessage.message.value == "") {
+					alert("抱歉，留言内容不能为空！");
+					document.leaveMessage.message.focus();
+					return false;
+				}
+			}
+		</script>
+
+		<div id="map" class="animate-box" data-animate-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" style="overflow:hidden;">
+						<h3 style="text-align:center">公司地址</h3>
+						{dede:field.content/}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{dede:include filename="footer.htm"/}
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop">
+			<i class="icon-arrow-up"></i>
+		</a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="/js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="/js/jquery.flexslider-min.js"></script>
+
+	<!-- Main -->
+	<script src="/js/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#tel").blur(function () {
+				var regPhone = new RegExp(/^1[3|4|5|7|8][0-9]\d{4,8}$/);
+				var reg = document.leaveMessage.tel.value;
+				if (regPhone.test(reg)) {
+					$(this).parent().removeClass("has-error");
+				}
+			});
+		});
+	</script>
+	{dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>
