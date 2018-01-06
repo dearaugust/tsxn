@@ -1,1 +1,0 @@
-INSERT INTO `dede_admin` VALUES('1','10','admin','ccbcbbd95ac026625de7','admin','','','','1512193500','27.191.134.17');

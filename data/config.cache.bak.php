@@ -1,7 +1,7 @@
 <?php
 $cfg_basehost = 'http://www.tsxn.com';
 $cfg_cmspath = '';
-$cfg_cookie_encode = 'nf3aOAMSUde65sbnGm4MUxQryYhCXK';
+$cfg_cookie_encode = 'TMmtrxLinGXdEfBtKLbNLFUB102UO';
 $cfg_indexurl = '/';
 $cfg_backup_dir = 'backupdata';
 $cfg_indexname = '首页';

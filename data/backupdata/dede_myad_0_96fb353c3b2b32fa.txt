@@ -1,1 +1,0 @@
-INSERT INTO `dede_myad` VALUES('1','0','0','微信二维码','微信二维码','0','1510278719','1512870719','<img src=\"/uploads/allimg/171114/1-1G1140ZGWV.png\" alt=\"\" />','');

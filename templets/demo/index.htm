@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{dede:global.cfg_webname/}</title>
-  <meta name="keywords" content="{dede:global.cfg_keywords/}"/>
-  <meta name="description" content="{dede:global.cfg_description/}"/>
+  <meta name="keywords" content="{dede:global.cfg_keywords/}" />
+  <meta name="description" content="{dede:global.cfg_description/}" />
   <meta name="author" content="" />
   <!-- Animate.css -->
   <link rel="stylesheet" href="/css/animate.css">
@@ -41,10 +41,11 @@
     <aside id="fh5co-hero" class="js-fullheight">
       <div class="flexslider js-fullheight">
         <ul class="slides">
-          {dede:arclist typeid='1' row='' titlelen='50' channelid='17' addfields='bigpic' flag='f' isweight='' orderby='weight' orderway='asc' limit=''}
+          {dede:arclist typeid='1' row='' titlelen='50' channelid='17' addfields='bigpic' flag='f' isweight='' orderby='weight' orderway='asc'
+          limit=''}
           <li style="background-image: url('[field:bigpic function=GetImgUrl(@me)/]');">
             <!-- <div class="overlay-gradient"></div> -->
-            <div class="container">
+            <!-- <div class="container">
               <div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
                 <div class="slider-text-inner">
                   <div class="desc">
@@ -56,7 +57,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </li>
           {/dede:arclist}
         </ul>
@@ -67,45 +68,52 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-4 text-center">
-            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+            <div class="feature-center">
               <span class="icon">
                 <i class="icon-credit-card"></i>
               </span>
-              {dede:arclist typeid='7' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
-              <h3>[field:typename/]</h3>
-              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
-              {/dede:arclist}
-              <p>
-                <a href="{dede:type typeid=7}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
-              </p>
+              <div class="animate-box" data-animate-effect="fadeIn">
+                {dede:arclist typeid='7' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+                <h3>[field:typename/]</h3>
+                <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+                {/dede:arclist}
+                <p>
+                  <a href="{dede:type typeid=7}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+                </p>
+              </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-4 text-center">
-            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+            <div class="feature-center">
               <span class="icon">
                 <i class="icon-layout"></i>
               </span>
-              {dede:arclist typeid='8' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
-              <h3>[field:typename/]</h3>
-              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
-              {/dede:arclist}
-              <p>
-                <a href="{dede:type typeid=8}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
-              </p>
+              <div class="animate-box" data-animate-effect="fadeIn">
+                {dede:arclist typeid='8' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+                <h3>[field:typename/]</h3>
+                <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+                {/dede:arclist}
+                <p>
+                  <a href="{dede:type typeid=8}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+                </p>
+              </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-4 text-center">
-            <div class="feature-center animate-box" data-animate-effect="fadeIn">
+            <div class="feature-center">
               <span class="icon">
                 <i class="icon-paper-plane"></i>
               </span>
-              {dede:arclist typeid='9' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
-              <h3>[field:typename/]</h3>
-              <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
-              {/dede:arclist}
-              <p>
-                <a href="{dede:type typeid=9}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
-              </p>
+              <div class="animate-box" data-animate-effect="fadeIn">
+                {dede:arclist typeid='9' row='1' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='' orderway='' limit=''}
+
+                <h3>[field:typename/]</h3>
+                <p>[field:description function=cn_substr(html2text(@me),180)/]...</p>
+                {/dede:arclist}
+                <p>
+                  <a href="{dede:type typeid=9}[field:typeurl/]{/dede:type}" class="btn btn-primary btn-outline">了解更多</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -123,7 +131,8 @@
           </div>
         </div>
         <div class="row">
-          {dede:arclist typeid='1' row='6' titlelen='50' channelid='' addfields='' flag='c' isweight='' orderby='weight' orderway='asc' limit=''}
+          {dede:arclist typeid='1' row='6' titlelen='50' channelid='' addfields='' flag='c' isweight='' orderby='weight' orderway='asc'
+          limit=''}
           <div class="col-md-4 text-center animate-box">
             <div class="product">
               <div class="product-grid" style="background-image:url([field:litpic/]);background-position:center;">
@@ -160,11 +169,14 @@
           <div class="col-md-10 col-md-offset-1">
             <div class="row animate-box">
               <div class="owl-carousel owl-carousel-fullwidth">
-                {dede:arclist typeid='1' row='3' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='weight' orderway='asc' limit=''}
+                {dede:arclist typeid='1' row='3' titlelen='50' channelid='' addfields='' flag='h' isweight='' orderby='weight' orderway='asc'
+                limit=''}
                 <div class="item">
                   <div class="testimony-slide active text-center">
                     <figure>
-                      <a href="[field:arcurl/]"><img src="[field:litpic/]" alt="product"></a>
+                      <a href="[field:arcurl/]">
+                        <img src="[field:litpic/]" alt="[field:description function=cn_substr(@me,50)/]">
+                      </a>
                     </figure>
                     <span>[field:title/]</span>
                     <blockquote>
