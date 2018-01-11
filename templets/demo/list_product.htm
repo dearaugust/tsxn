@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
-    <meta name="keywords" content="{dede:field.keywords/}"/>
-    <meta name="description" content="{dede:field.description function=html2text(@me)/}"/>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description function=html2text(@me)/}" />
     <meta name="author" content="gettemplates.co" />
 
     <!-- Animate.css -->
@@ -66,9 +66,7 @@
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <span>Cool Stuff</span>
-                        <h2>所有产品</h2>{dede:field.currentstyle/}
-                        <ul class="product-list">
+                        <!-- <ul class="product-list">
                             {dede:channel type='son' currentstyle="
                             <li class='focus'>
                                 <a href='~typelink~' title='~typename~'>~typename~</a>
@@ -77,10 +75,26 @@
                                 <a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a>
                             </li>
                             {/dede:channel}
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-md-2 fh5co-heading">
+                        <a href="{dede:type typeid=1}[field:typeurl/]{/dede:type}"><h2>所有产品<span>products</span></h2></a> 
+                        
+                        <ul class="product-list">
+                            <li{dede:field name=topid runphp=yes}if(@me)@me=''; else @me=' class="focus"';{/dede:field}><a href="{dede:field.typeid runphp='yes'"}
+                                global $dsql ;
+                                $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=@me");
+                                $reid = $reid['reid'];
+                                $typename = $dsql->GetOne("SELECT typedir FROM dede_arctype where id=$reid");
+                                @me=str_replace('{cmspath}','',$typename['typedir']);
+                            {/dede:field.typeid}">全部产品</a></li>
+                            {dede:channel type='son' currentstyle="<li class='focus'><a href='~typelink~' title='~typename~'>~typename~</a></li>"}
+                            <li><a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a></li>
+                            {/dede:channel}
+                        </ul>
+                    </div>
                     <!-- {dede:arclist typeid='top' row='10' tagid='index' type='image.' imgwidth='376' imgheight='376' limit='' orderby='sortrank'}
                     <div class="col-md-4 text-center animate-box">
                         <div class="product">
@@ -101,29 +115,34 @@
                         </div>
                     </div>
                     {/dede:arclist} -->
-                    {dede:list pagesize='9' titlelen='250' orderby='weight' orderway='asc'}
-                    <div class="col-md-4 text-center animate-box">
-                        <div class="product">
-                            <div class="product-grid" style="background-image:url([field:litpic/]);">
-                                <div class="inner">
-                                    <p>
-                                        <a href="[field:arcurl/]" class="icon">
-                                            <i class="icon-eye"></i>
-                                        </a>
-                                    </p>
+                    <div class="col-md-10">
+                        <div class="row">
+                            {dede:list pagesize='8' titlelen='250' orderby='weight' orderway='asc'}
+                            <div class="col-md-3 text-center animate-box">
+                                <div class="product">
+                                    <div class="product-grid" style="background-image:url([field:litpic/]);">
+                                        <div class="inner">
+                                            <p>
+                                                <a href="[field:arcurl/]" class="icon">
+                                                    <i class="icon-eye"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        <h3>
+                                            <a href="[field:arcurl/]">[field:title/]</a>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="desc">
-                                <h3>
-                                    <a href="[field:arcurl/]">[field:title/]</a>
-                                </h3>
+                            {/dede:list}
+
+                            <!-- <div class="c_page">{dede:arcpagelist tagid='dedecms'/}</div>  -->
+                            <div class="my_pages">
+                                <ul>{dede:pagelist listitem="index,end,pre,next,pageno" listsize="3" pagelang=""/}</ul>
                             </div>
                         </div>
-                    </div>
-                    {/dede:list}
-                    <!-- <div class="c_page">{dede:arcpagelist tagid='dedecms'/}</div>  -->
-                    <div class="my_pages">
-                        <ul>{dede:pagelist listitem="index,end,pre,next,pageno" listsize="3" pagelang=""/}</ul>
                     </div>
                 </div>
             </div>

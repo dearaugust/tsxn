@@ -1,0 +1,1 @@
+<div class="col-md-12">[field:content function=cn_substr(html2text(@me),1000)/]</div>

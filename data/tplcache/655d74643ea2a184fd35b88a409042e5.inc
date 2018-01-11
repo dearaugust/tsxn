@@ -1,0 +1,1 @@
+<img src="[field:pic/]" alt="[field:title/]">

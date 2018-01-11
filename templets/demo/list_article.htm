@@ -65,22 +65,24 @@
         <div id="fh5co-contact">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 animate-box text-center">
-                        <div class="fh5co-contact-info">
-                            <h3>{dede:field.typeid function=gettoptype(@me,typename)/}</h3>
+                    <div class="col-md-2 animate-box">
+                        <div class="fh5co-contact-info fh5co-heading">
+                            <h2>{dede:field.typeid function=gettoptype(@me,typename)/}<span>{dede:field.typenamedir/}</span></h2>
                             <ul class="news-list">
-                                {dede:channel type='son' currentstyle="
-                                <li class='focus'>
-                                    <a href='~typelink~' title='~typename~'>~typename~</a>
-                                </li>"}
-                                <li>
-                                    <a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a>
-                                </li>
-                                {/dede:channel}
+                                <li{dede:field name=topid runphp=yes}if(@me)@me=''; else @me=' class="focus"';{/dede:field}><a href="{dede:field.typeid runphp='yes'"}
+                                    global $dsql ;
+                                    $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=@me");
+                                    $reid = $reid['reid'];
+                                    $typename = $dsql->GetOne("SELECT typedir FROM dede_arctype where id=$reid");
+                                    @me=str_replace('{cmspath}','',$typename['typedir']);
+                                 {/dede:field.typeid}">全部文章</a></li>
+                                    {dede:channel type='son' currentstyle="<li class='focus'><a href='~typelink~' title='~typename~'>~typename~</a></li>"}
+                                    <li><a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a></li>
+                                    {/dede:channel}
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-9 animate-box">
+                    <div class="col-md-10 animate-box">
                         <h3>{dede:field.typename/}</h3>
                         <p style="text-align:right">当前位置：{dede:field.position/}</p>
                         {dede:list pagesize='10' titlelen='250'}

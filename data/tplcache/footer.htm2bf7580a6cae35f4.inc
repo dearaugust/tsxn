@@ -32,7 +32,7 @@ $z[9][4]['row']="40";
 $z[9][4]['type']="text";
 $z[9][4]['titlelen']="40";
 $z[9][4]['typeid']="0";
-$z[10]=Array("global","",1510,1536);
+$z[10]=Array("global","",1635,1661);
 $z[10][4]=array();
 $z[10][4]['name']="cfg_powerby";
 

@@ -1,0 +1,1 @@
+<img src="[field:typesmallpic /]" alt="[field:title/]" style="width:100%;">
