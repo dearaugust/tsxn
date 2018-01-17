@@ -68,8 +68,11 @@ if($tinfos['issystem']==-1)
     include(DEDEINC."/arc.sglistview.class.php");
     $lv = new SgListView($tid,$cArr);
 } else {
+$nativeplace = ( (empty($nativeplace) || !is_numeric($nativeplace)) ? 0 : $nativeplace );
+$cArr = array();
+if(!empty($nativeplace)) $cArr['nativeplace'] = $nativeplace;
     include(DEDEINC."/arc.listview.class.php");
-    $lv = new ListView($tid);
+    $lv = new ListView($tid,$cArr);
     //对设置了会员级别的栏目进行处理
     if(isset($lv->Fields['corank']) && $lv->Fields['corank'] > 0)
     {

@@ -1,2 +1,0 @@
-INSERT INTO `dede_myppttype` VALUES('1','首页幻灯大图');
-INSERT INTO `dede_myppttype` VALUES('2','浏览数据大图');

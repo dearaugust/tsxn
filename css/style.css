@@ -15,7 +15,7 @@
 body {
   font-family: "微软雅黑", serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.7;
   color: #424242;
   background: #fff;
@@ -119,9 +119,9 @@ figure {
 }
 .owl-index {
   position: relative;
-  color: #FAFAFA;
+  color: #fafafa;
 }
-.owl-index .owl-controls .owl-nav [class*=owl-] {
+.owl-index .owl-controls .owl-nav [class*="owl-"] {
   font-size: 30px;
 }
 .owl-index .owl-prev {
@@ -148,6 +148,9 @@ figure {
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Montserrat", Arial, sans-serif;
+  /* position: absolute; */
+  /* top: -10px; */
+  /* z-index: 10; */
 }
 
 .fh5co-nav a {
@@ -256,10 +259,11 @@ figure {
   font-size: 20px;
   padding: 30px 20px;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  font-weight: bold;
 }
 
 .fh5co-nav ul li a:hover,
@@ -296,7 +300,7 @@ figure {
 }
 
 .fh5co-nav ul li.has-dropdown .dropdown {
-  width: 150px;
+  width: 155px;
   -webkit-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
@@ -316,6 +320,10 @@ figure {
   -webkit-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
+  /* font-size: 14px; */
+}
+.fh5co-nav ul li.has-dropdown .dropdown li a {
+  /* font-size: 14px; */
 }
 
 .fh5co-nav ul li.has-dropdown .dropdown:before {
@@ -347,7 +355,7 @@ figure {
   color: #999999;
   line-height: 1.2;
   text-transform: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .fh5co-nav ul li.has-dropdown .dropdown li a:hover {
@@ -541,7 +549,7 @@ figure {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 }
 
 .fh5co-cover > .fh5co-container {
@@ -582,7 +590,7 @@ figure {
 
 .fh5co-cover.fh5co-cover-sm .display-t,
 .fh5co-cover.fh5co-cover-sm .display-tc {
-  height: 650px;
+  height: 500px;
   display: table;
   width: 100%;
 }
@@ -604,6 +612,7 @@ figure {
 .about-content img {
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 10px;
+  margin: 5px;
 }
 
 .about-content .desc {
@@ -660,7 +669,7 @@ figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #FAFAFA;
+  color: #fafafa;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -676,13 +685,13 @@ figure {
 
 .fh5co-contact-info ul li {
   padding: 0 0 0 30px;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
   list-style: none;
   position: relative;
 }
 
 .fh5co-contact-info ul li:before {
-  color: #FAFAFA;
+  color: #fafafa;
   position: absolute;
   left: 0;
   top: 0.05em;
@@ -870,7 +879,7 @@ figure {
 #fh5co-about,
 #fh5co-contact,
 #fh5co-footer {
-  padding: 5em 0;
+  padding: 4em 0;
   clear: both;
 }
 
@@ -892,7 +901,6 @@ figure {
   padding-right: 20px;
   float: left;
   width: 100%;
-  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 768px) {
@@ -952,7 +960,7 @@ figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
-  height: 240px;
+  /* height: 262px; */
   margin-bottom: 20px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -975,7 +983,7 @@ figure {
 
 .product .product-grid .inner {
   display: table;
-  height: 240px;
+  /* height: 262px; */
   width: 100%;
   opacity: 0;
   background: rgba(0, 0, 0, 0.3);
@@ -1214,11 +1222,11 @@ figure {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #000;
+  color: #424242;
 }
 
 .fh5co-heading p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: #424242;
 }
@@ -1229,7 +1237,7 @@ figure {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "微软雅黑", Arial, sans-serif;
 }
 
 #fh5co-testimonial {
@@ -1366,18 +1374,18 @@ figure {
 
 #fh5co-footer {
   background: #424242;
-  color: #FAFAFA;
-  padding: 3em 0 0 1em;
+  color: #fafafa;
+  padding: 2em 0 0 1em;
   font-size: 14px;
 }
 #fh5co-footer a {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 #fh5co-footer a:hover {
   color: #d1c286;
 }
 #fh5co-footer h3 {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 #fh5co-footer .fh5co-footer-links {
   padding: 0;
@@ -2038,12 +2046,16 @@ figure {
 
 .product-list li {
   /* display: inline-block; */
-  padding: 0 10px 0;
-  margin-bottom: 20px; 
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .fh5co-contact-info .news-list li {
-  padding: 0 0 0 10px;
+  padding: 5px 20px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .list-content {
@@ -2062,7 +2074,8 @@ figure {
 }
 
 #fh5co-logo img {
-  max-width: 120px;
+  max-width: 400px;
+  /* height: 300px; */
 }
 
 .fh5co-nav ul {
@@ -2076,11 +2089,93 @@ figure {
   width: 100%;
 }
 .fh5co-dynamic-main {
-  padding: 2em 0 4em 0;
+  padding: 2px 0 1em 0;
 }
 
-.contact-us ul li:before{
+.contact-us ul li:before {
   color: #424242;
+}
+
+.dealer {
+  margin: 2em 0;
+}
+.table-dealer thead {
+  font-weight: bold;
+}
+.province a {
+  display: inline-block;
+  padding: 5px;
+}
+.city a {
+  display: inline-block;
+  padding: 5px;
+}
+
+.fh5co-nav .menu-1 ul {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+#fh5co-services .fh5co-heading p {
+  font-size: 14px;
+  line-height: 2;
+}
+#fh5co-services .fh5co-heading img {
+  margin: 10px 0 30px 30px;
+}
+#fh5co-dynamic .hot-product img {
+  width: 100%;
+}
+
+#fh5co-services {
+  padding: 2em 0 0 0;
+}
+
+.modal-body img {
+  width: 100%;
+  display: block;
+}
+#fh5co-about .desc {
+  /* text-align: initial; */
+}
+.QRcode {
+  /* border:1px solid red; */
+  /* position: absolute; */
+  float: right;
+  margin-right: 20px;
+  /* position: relative; */
+}
+.QRcode a {
+  display: block;
+  float: right;
+  font-size: 22px;
+}
+.QRcode a:hover {
+  color: #d1c286;
+}
+.QRcode-box {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/*代理商*/
+.label {
+  color: #424242;
+  font-size: 16px;
+  font-weight: initial;
+  padding: .6em 1.2em .6em;
+}
+#fh5co-contact .fh5co-heading span {
+  font-size: 16px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.label-default {
+  background-color: #fff;
+  border: 1px solid #d1c286;
+  box-shadow: 0 0 5px 4px #d1c286;
 }
 
 .my_pages {
@@ -2146,6 +2241,23 @@ figure {
   #fh5co-product .fh5co-heading span {
     /* font-size: 10px; */
     padding: 0;
+  }
+  #fh5co-hero {
+    min-height: 300px;
+  }
+  #fh5co-hero .flexslider .slides li {
+    background-size: 200%;
+    min-height: 300px;
+  }
+  #fh5co-services .fh5co-heading img {
+    width: 100%;
+  }
+  #fh5co-logo img {
+    max-width: 280px;
+  }
+  #fh5co-dynamic img {
+    width: 180%;
+    margin-left: -38%;
   }
 }
 

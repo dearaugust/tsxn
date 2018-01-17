@@ -172,13 +172,23 @@ class SgListView
         {
             if(!empty($this->searchArr['nativeplace']))
             {
+				
                 if($this->searchArr['nativeplace'] % 500 ==0 )
                 {
                     $naddQuery .= " AND arc.nativeplace >= '{$this->searchArr['nativeplace']}' AND arc.nativeplace < '".($this->searchArr['nativeplace']+500)."'";
                 }
                 else
                 {
-                    $naddQuery .= "AND arc.nativeplace = '{$this->searchArr['nativeplace']}'";
+					if(preg_match("#\.#", $this->searchArr['nativeplace']))
+					{
+						$num = explode(".",$this->searchArr['nativeplace']);
+						$this->searchArr['nativeplace'] = $num[0].'.'.str_pad($num[1],3,'0',STR_PAD_LEFT);
+						$naddQuery .= "AND arc.nativeplace = '{$this->searchArr['nativeplace']}'";
+					}
+					else
+					{
+						$naddQuery .= " AND arc.nativeplace >= '{$this->searchArr['nativeplace']}' AND arc.nativeplace < '".($this->searchArr['nativeplace']+1)."'";
+					}
                 }
             }
             if(!empty($this->searchArr['infotype']))

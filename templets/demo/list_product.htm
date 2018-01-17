@@ -19,6 +19,7 @@
 
     <!-- Flexslider  -->
     <link rel="stylesheet" href="/css/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
 
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -51,10 +52,10 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                {dede:type typeid=1}
+                                <!-- {dede:type typeid=1}
                                 <h1>[field:typenamedir/]</h1>
                                 <h2>[field:typename/]</h2>
-                                {/dede:type}
+                                {/dede:type} -->
                             </div>
                         </div>
                     </div>
@@ -79,20 +80,24 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 fh5co-heading">
-                        <a href="{dede:type typeid=1}[field:typeurl/]{/dede:type}"><h2>所有产品<span>products</span></h2></a> 
-                        
+                    <div class="col-md-3 fh5co-heading">
+                        <a href="{dede:type typeid=1}[field:typeurl/]{/dede:type}">
+                            <h2>所有产品
+                                <span>products</span>
+                            </h2>
+                        </a>
+
                         <ul class="product-list">
                             <li{dede:field name=topid runphp=yes}if(@me)@me=''; else @me=' class="focus"';{/dede:field}><a href="{dede:field.typeid runphp='yes'"}
-                                global $dsql ;
-                                $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=@me");
-                                $reid = $reid['reid'];
-                                $typename = $dsql->GetOne("SELECT typedir FROM dede_arctype where id=$reid");
-                                @me=str_replace('{cmspath}','',$typename['typedir']);
-                            {/dede:field.typeid}">全部产品</a></li>
-                            {dede:channel type='son' currentstyle="<li class='focus'><a href='~typelink~' title='~typename~'>~typename~</a></li>"}
-                            <li><a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a></li>
-                            {/dede:channel}
+                                    global $dsql ;
+                                    $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=@me");
+                                    $reid = $reid['reid'];
+                                    $typename = $dsql->GetOne("SELECT typedir FROM dede_arctype where id=$reid");
+                                    @me=str_replace('{cmspath}','',$typename['typedir']);
+                                 {/dede:field.typeid}">全部产品</a></li>
+                                    {dede:channel type='son' currentstyle="<li class='focus'><a href='~typelink~' title='~typename~'>~typename~</a></li>"}
+                                    <li><a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a></li>
+                                    {/dede:channel}
                         </ul>
                     </div>
                     <!-- {dede:arclist typeid='top' row='10' tagid='index' type='image.' imgwidth='376' imgheight='376' limit='' orderby='sortrank'}
@@ -115,15 +120,16 @@
                         </div>
                     </div>
                     {/dede:arclist} -->
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <div class="row">
-                            {dede:list pagesize='8' titlelen='250' orderby='weight' orderway='asc'}
-                            <div class="col-md-3 text-center animate-box">
+                                <p style="text-align:right">当前位置：{dede:field.position/}</p>
+                            {dede:list pagesize='9' titlelen='250' orderby='weight' orderway='asc'}
+                            <div class="col-md-4 text-center animate-box list-product">
                                 <div class="product">
                                     <div class="product-grid" style="background-image:url([field:litpic/]);">
                                         <div class="inner">
                                             <p>
-                                                <a href="[field:arcurl/]" class="icon">
+                                                <a href="#" class="icon" data-toggle="modal" data-target="#myModal[field:global name=autoindex/]" data-target=".bs-example-modal-lg">
                                                     <i class="icon-eye"></i>
                                                 </a>
                                             </p>
@@ -131,8 +137,28 @@
                                     </div>
                                     <div class="desc">
                                         <h3>
-                                            <a href="[field:arcurl/]">[field:title/]</a>
+                                            <a href="#" data-toggle="modal" data-target="#myModal[field:global name=autoindex/]" data-target=".bs-example-modal-lg">[field:title/]</a>
                                         </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal[field:global name=autoindex/]" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel"><b>[field:title/]</b></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            [field:body/]
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -177,11 +203,7 @@
         {dede:include filename="footer.htm"/}
     </div>
 
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop">
-            <i class="icon-arrow-up"></i>
-        </a>
-    </div>
+    <div id="top"></div>
 
     <!-- jQuery -->
     <script src="/js/jquery.min.js"></script>

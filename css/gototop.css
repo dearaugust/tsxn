@@ -1,0 +1,93 @@
+
+/*main css*/
+.izl-rmenu {
+  width: 30px;
+  position: fixed;
+  right: 1%;
+  margin-left: 532px;
+  bottom: 0;
+  padding-bottom: 50px;
+  /* background: url(../images/r_b.png) center center no-repeat; */
+  z-index: 999;
+}
+.izl-rmenu .btn {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 
+}
+
+.izl-rmenu .btn-wx {
+  background: url(../images/r_wx.png) center center no-repeat;
+  /* background-color: #00BCD4; */
+}
+.izl-rmenu .btn-wx:hover {
+  background-color: #A5D6A7;
+}
+.izl-rmenu .btn-wx .pic {
+  position: absolute;
+  left: -160px;
+  top: 0;
+  display: none;
+  width: 160px;
+  height: 160px;
+}
+.izl-rmenu .btn-wxfw {
+  background: url(../images/r_wxdy.png) center center no-repeat;
+  /* background-color: #78c340; */
+}
+.izl-rmenu .btn-wxfw:hover {
+  background-color: #E8F5E9;
+}
+.izl-rmenu .btn-wxfw .pic {
+  position: absolute;
+  left: -160px;
+  top: 0;
+  display: none;
+  width: 160px;
+  height: 160px;
+}
+.izl-rmenu .btn-wb {
+  background: url(../images/r_wb.png) center center no-repeat;
+  /* background-color: #F44336; */
+}
+.izl-rmenu .btn-wb:hover {
+  background-color: #E57373;
+}
+.izl-rmenu .btn-wb .pic {
+  position: absolute;
+  left: -160px;
+  top: 0;
+  display: none;
+  width: 160px;
+  height: 160px;
+}
+.izl-rmenu .btn-phone {
+  background: url(../images/r_phone.png) center center no-repeat;
+  /* background-color: #fbb01f; */
+}
+.izl-rmenu .btn-phone:hover {
+  background-color: #4DD0E1;
+}
+.izl-rmenu .btn-phone .phone {
+  background-color: #4DD0E1;
+  position: absolute;
+  width: 160px;
+  left: -160px;
+  top: 0px;
+  line-height: 73px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+}
+.izl-rmenu .btn-top {
+  background: url(../images/r_top.png) center center no-repeat;
+  /* background-color: #666666; */ 
+  display: none;
+}
+.izl-rmenu .btn-top:hover {
+  background-color: #FFF9C4;
+}

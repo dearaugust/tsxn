@@ -1,0 +1,2 @@
+INSERT INTO `dede_admin` VALUES('1','10','admin','ccbcbbd95ac026625de7','admin','','','','1515802130','127.0.0.1');
+INSERT INTO `dede_admin` VALUES('2','5','thinkgem','749823fd92de8d624fbf','thinkgem','','','','0','');

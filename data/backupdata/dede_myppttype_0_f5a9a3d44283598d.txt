@@ -1,0 +1,5 @@
+INSERT INTO `dede_myppttype` VALUES('1','首页幻灯大图');
+INSERT INTO `dede_myppttype` VALUES('2','热销产品大图');
+INSERT INTO `dede_myppttype` VALUES('3','首页新闻图片');
+INSERT INTO `dede_myppttype` VALUES('4','首页产品背景图');
+INSERT INTO `dede_myppttype` VALUES('5','首页公司简介图片');

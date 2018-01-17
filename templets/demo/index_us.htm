@@ -20,6 +20,7 @@
 
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="/css/flexslider.css">
+	<link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
 
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -34,24 +35,6 @@
 	<!--[if lt IE 9]>
 	<script src="/js/respond.min.js"></script>
 	<![endif]-->
-
-	<script type="text/javascript">
-		$(document).ready(function () {
-			changeAuthCode();
-			document.forms[0].reset();
-		});
-
-		function changeAuthCode() {
-			var num = new Date().getTime();
-			var rand = Math.round(Math.random() * 10000);
-			num = num + rand;
-			$('#ver_code').css('visibility', 'visible');
-			if ($("#vdimgck")[0]) {
-				$("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
-			}
-			return false;
-		}
-	</script>
 
 </head>
 
@@ -69,10 +52,10 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								{dede:type typeid=}
+								<!-- {dede:type typeid=}
 								<h1>[field:typenamedir/]</h1>
 								<h2>[field:typename/]</h2>
-								{/dede:type}
+								{/dede:type} -->
 							</div>
 						</div>
 					</div>
@@ -83,6 +66,7 @@
 		<div id="fh5co-contact">
 			<div class="container">
 				<div class="row">
+						<p style="text-align:right">当前位置：{dede:field.position/}</p>
 					<div class="col-md-5 col-md-push-1 animate-box">
 
 						<div class="fh5co-contact-info contact-us">
@@ -102,7 +86,21 @@
 						</div>
 
 					</div>
-					<div class="col-md-6 animate-box">
+					<div class="col-md-6" style="overflow:hidden;">
+						<h3>公司地址</h3>
+						{dede:field.content/}
+					</div>
+					
+				</div>
+
+			</div>
+		</div>
+
+
+		<div id="map" class="animate-box" data-animate-effect="fadeIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 animate-box">
 						<h3>留言反馈</h3>
 						<form name="leaveMessage" action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return CheckMessage();">
 							<input type="hidden" name="action" value="post" />
@@ -156,7 +154,6 @@
 						</form>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -190,25 +187,10 @@
 			}
 		</script>
 
-		<div id="map" class="animate-box" data-animate-effect="fadeIn">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12" style="overflow:hidden;">
-						<h3 style="text-align:center">公司地址</h3>
-						{dede:field.content/}
-					</div>
-				</div>
-			</div>
-		</div>
-
 		{dede:include filename="footer.htm"/}
 	</div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop">
-			<i class="icon-arrow-up"></i>
-		</a>
-	</div>
+	<div id="top"></div>
 
 	<!-- jQuery -->
 	<script src="/js/jquery.min.js"></script>
@@ -224,7 +206,23 @@
 	<script src="/js/jquery.countTo.js"></script>
 	<!-- Flexslider -->
 	<script src="/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			changeAuthCode();
+			document.forms[0].reset();
+		});
 
+		function changeAuthCode() {
+			var num = new Date().getTime();
+			var rand = Math.round(Math.random() * 10000);
+			num = num + rand;
+			$('#ver_code').css('visibility', 'visible');
+			if ($("#vdimgck")[0]) {
+				$("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
+			}
+			return false;
+		}
+	</script>
 	<!-- Main -->
 	<script src="/js/main.js"></script>
 	<script>

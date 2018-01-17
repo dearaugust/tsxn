@@ -1,0 +1,1 @@
+<url><loc>[field:global.cfg_basehost /][field:arcurl/]</loc><lastmod>[field:pubdate function="MyDate('Y-m-d',@me)"/]</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>

@@ -1,0 +1,7 @@
+INSERT INTO `dede_myppt` VALUES('1','1','0','首页轮播图-1','/uploads/allimg/180113/1-1P1130P9170-L.jpg','','','');
+INSERT INTO `dede_myppt` VALUES('2','1','0','首页轮播图-2','/uploads/allimg/180113/1-1P1130P9330-L.jpg','','','');
+INSERT INTO `dede_myppt` VALUES('3','1','0','首页轮播图-3','/uploads/allimg/180113/1-1P1130P9400-L.jpg','','','');
+INSERT INTO `dede_myppt` VALUES('5','2','0','唐山烯牛石墨烯科技有限公司-热销产品','/uploads/allimg/180110/1-1P1100PG90-L.jpg','','','');
+INSERT INTO `dede_myppt` VALUES('6','3','0','唐山烯牛石墨烯科技有限公司-公司动态图片','/uploads/allimg/180108/1-1P10Q104150-L.png','','','');
+INSERT INTO `dede_myppt` VALUES('7','4','0','唐山烯牛石墨烯科技有限公司-产品背景图','/uploads/allimg/180110/1-1P1100P6010-L.jpg','','','');
+INSERT INTO `dede_myppt` VALUES('8','5','0','唐山烯牛石墨烯科技有限公司-公司介绍图片','/uploads/allimg/180110/1-1P1101444120-L.png','','','');

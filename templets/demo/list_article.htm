@@ -20,6 +20,7 @@
     <!-- Flexslider  -->
     <link rel="stylesheet" href="/css/flexslider.css">
 
+    <link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
 
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -51,10 +52,10 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                {dede:type typeid=6}
+                                <!-- {dede:type typeid=6}
                                 <h1>[field:typenamedir/]</h1>
                                 <h2>[field:typename/]</h2>
-                                {/dede:type}
+                                {/dede:type} -->
                             </div>
                         </div>
                     </div>
@@ -65,7 +66,7 @@
         <div id="fh5co-contact">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 animate-box">
+                    <div class="col-md-3 animate-box">
                         <div class="fh5co-contact-info fh5co-heading">
                             <h2>{dede:field.typeid function=gettoptype(@me,typename)/}<span>{dede:field.typenamedir/}</span></h2>
                             <ul class="news-list">
@@ -82,9 +83,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-10 animate-box">
-                        <h3>{dede:field.typename/}</h3>
-                        <p style="text-align:right">当前位置：{dede:field.position/}</p>
+                    <p style="text-align:right">当前位置：{dede:field.position/}</p>
+                    <div class="col-md-9 animate-box">
+                        <!-- <h3>{dede:field.typename/}</h3> -->
+                        
                         {dede:list pagesize='10' titlelen='250'}
                         <p class="list-content">
                             <a href="[field:arcurl/]">
@@ -98,18 +100,13 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
         {dede:include filename="footer.htm"/}
     </div>
 
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop">
-            <i class="icon-arrow-up"></i>
-        </a>
-    </div>
+    <div id="top"></div>
 
     <!-- jQuery -->
     <script src="/js/jquery.min.js"></script>

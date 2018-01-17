@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{dede:field.title/} - {dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description function=html2text(@me)/}" />
+    <meta name="author" content="gettemplates.co" />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="/css/flexslider.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+    <div class="fh5co-loader"></div>
+
+    <div id="page">
+        {dede:include filename="head.htm"/}
+
+        <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url({dede:type typeid=6}[field:typelitpic/]{/dede:type});background-position:center;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <!-- {dede:type typeid=6}
+                                <h1>[field:typenamedir/]</h1>
+                                <h2>[field:typename/]</h2>
+                                {/dede:type} -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="fh5co-contact">
+            <div class="container">
+                <div class="row">
+                        <p style="text-align:right">当前位置：{dede:field.position/}</p>
+                    <div class="col-md-12 fh5co-heading">
+
+
+                        <h2>{dede:field.typename/}
+                            <span>{dede:field.typenamedir/}</span>
+                        </h2>
+                        
+                        <!-- 
+                        <script>
+                            var shengfen = "{dede:infolink}[field:linkallplace/]{/dede:infolink}";
+                            // var str ＝ "你好啊124只取汉字abc",
+                            // reg = /[\u4e00-\u9fa5]/g;
+                            // console.log(shengfen.match(reg));
+                            // console.log(shengfen);
+                            var arr = new Array();
+                            var i = 0;
+                            while (i<shengfen.length) {
+                                var s="";
+                                while (shengfen.charCodeAt(i) < 256) {
+                            s=s+shengfen.charAt(i);
+                            i++;
+                                }
+                                arr.push(s);
+                                var s="";
+                                while (shengfen.charCodeAt(i) > 256) {
+                            s=s+shengfen.charAt(i);
+                            i++;
+                                }
+                                arr.push(s);
+                            }
+                            for (i=0; i<arr.length; i++) {
+                                document.write(arr[i]+" ");
+                            }
+                            console.log(arr)
+                        </script> -->
+                        <div class="dealer">
+                            {dede:infolink}
+                            <div class="province">
+                                <b>省份：</b>[field:linkallplace /]
+                            </div>
+                            <div class="city">
+                                <b>市级：</b>[field:nativeplace /]
+                            </div>
+                            <!-- <p>
+                                <b>地区：</b>[field:county /]
+                            </p> -->
+                            {/dede:infolink}
+                        </div>
+                        <!-- <script type="text/javascript" src="/js/area.js"></script>
+<select class="input w100" id="s_province" name="s_province">
+<option value="省份">省份</option>
+</select>
+<select class="input w100" id="s_city" name="s_city">
+<option value="城市">城市</option>
+</select>
+<select class="input w100" id="s_county" name="s_county">
+<option value="地区">地区</option>
+</select>
+<script type="text/javascript">_init_area();</script>
+<button type="button" class="btn btn-primary chaxun">查询</button> -->
+
+        
+                        {dede:list pagesize='10' titlelen='250'}
+                        <div class="col-md-4 animate-box">
+                                <span class="label label-default"><i class="icon icon-location-pin"></i>[field:linkman/]</span>
+                        </div>
+                        {/dede:list}
+                        <div class="my_pages">
+                            <ul>{dede:pagelist listitem="index,end,pre,next,pageno" listsize="3" pagelang=""/}</ul>
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-md-3 animate-box">
+                        <div class="fh5co-contact-info fh5co-heading">
+                            <h2>{dede:field.typeid function=gettoptype(@me,typename)/}<span>{dede:field.typenamedir/}</span></h2>
+                            <ul class="news-list">
+                                <li{dede:field name=topid runphp=yes}if(@me)@me=''; else @me=' class="focus"';{/dede:field}><a href="{dede:field.typeid runphp='yes'"}
+                                    global $dsql ;
+                                    $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=@me");
+                                    $reid = $reid['reid'];
+                                    $typename = $dsql->GetOne("SELECT typedir FROM dede_arctype where id=$reid");
+                                    @me=str_replace('{cmspath}','',$typename['typedir']);
+                                 {/dede:field.typeid}">全部文章</a></li>
+                                    {dede:channel type='son' currentstyle="<li class='focus'><a href='~typelink~' title='~typename~'>~typename~</a></li>"}
+                                    <li><a href='[field:typelink /]' title='[field:typename/]'>[field:typename/]</a></li>
+                                    {/dede:channel}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9 animate-box">
+                        
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        {dede:include filename="footer.htm"/}
+    </div>
+
+    <div id="top"></div>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="/js/jquery.countTo.js"></script>
+    <!-- Flexslider -->
+    <script src="/js/jquery.flexslider-min.js"></script>
+
+    <!-- Main -->
+    <script src="/js/main.js"></script>
+    {dede:include filename="zidongzhuaqu.htm"/}
+</body>
+
+</html>

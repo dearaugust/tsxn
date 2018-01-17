@@ -1,0 +1,9 @@
+<div class="fh5co-heading">
+                <h2>[field:typename/]
+                  <span>[field:typenamedir/]</span>
+                </h2>
+                <div>[field:content/]</div>
+              </div>
+              <p>
+                <a href="[field:typeurl/]" class="btn btn-primary btn-outline">了解更多</a>
+              </p>

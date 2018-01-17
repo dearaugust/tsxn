@@ -274,34 +274,95 @@
       smartSpeed: 800,
       // autoHeight: true,
       rewindNav: true
-	});
-	owlIndex.owlCarousel({
-		items: 4,
-		loop: true,
-		margin: 10,
-		nav: true,
-		dots: true,
-    // dotsEach: true,
-    autoplay: true,
-    autoplayTimeout: 1500,
-    autoplayHoverPause: true,
-		smartSpeed: 1000,
-		navText: ["<i class='icon-chevron-left'></i>", "<i class='icon-chevron-right'></i>"],
-		// autoHeight: true,
-		rewindNav: true,
-		responsive: {
-			0: {
-				items: 1
-			},
-			600: {
-				items: 3
-			},
-			1000: {
-				items: 4
-			}
-		}
-	  });
+    });
+    owlIndex.owlCarousel({
+      items: 4,
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: true,
+      // dotsEach: true,
+      autoplay: true,
+      autoplayTimeout: 1500,
+      autoplayHoverPause: true,
+      smartSpeed: 1000,
+      navText: [
+        "<i class='icon-chevron-left'></i>",
+        "<i class='icon-chevron-right'></i>"
+      ],
+      // autoHeight: true,
+      rewindNav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 4
+        }
+      }
+    });
   };
+
+  var chaxun = function() {
+    var btn = $(".chaxun");
+    btn.click({
+      // console.log($("#s_province").value())
+    });
+  };
+
+  var productHeight = function() {
+    var productWidth = $(".list-product").width();
+    $(".product .product-grid").height(productWidth);
+    $(".product .product-grid .inner").height(productWidth);
+  };
+
+  var QRcode =function() {
+    /*底部二维码*/
+  
+    $(".weibo_icon").hover(function(){
+      $(".weibo").fadeIn(500);
+      $(".qq,.twitter,.wechat").fadeOut(0);
+      $(".code_wrap").css("z-index",200);
+    },function(){
+      $(".weibo").fadeOut(0);
+      $(".code_wrap").css("z-index",50);
+    });
+  
+    $(".qq_icon").hover(function(){
+      $(".qq").fadeIn(500);
+      $(".weibo,.twitter,.wechat").fadeOut(0);
+      $(".code_wrap").css("z-index",200);
+    },function(){
+      $(".qq").fadeOut(0);
+      $(".code_wrap").css("z-index",50);
+    });
+    $(".twitter_icon").hover(function(){
+      $(".twitter").fadeIn(500);
+      $(".weibo,.qq,.wechat").fadeOut(0);
+      $(".code_wrap").css("z-index",200);
+    },function(){
+      $(".twitter").fadeOut(0);
+      $(".code_wrap").css("z-index",50);
+    });
+    $(".wechat_icon").hover(function(){
+      $(".wechat").fadeIn(500);
+      $(".weibo,.qq,.twitter").fadeOut(0);
+      $(".code_wrap").css("z-index",200);
+    },function(){
+      $(".wechat").fadeOut(0);
+      $(".code_wrap").css("z-index",50);
+    });
+    $(".weibo,.twitter,.wechat").hover(function(){
+      $(this).fadeIn(0);
+      $(".code_wrap").css("z-index",200);
+    },function(){
+      $(this).fadeOut(500);
+      $(".code_wrap").css("z-index",50);
+    });
+  }
 
   $(function() {
     mobileMenuOutsideClick();
@@ -315,5 +376,7 @@
     counterWayPoint();
     sliderMain();
     testimonialCarousel();
+    productHeight();
+    QRcode();
   });
 })();

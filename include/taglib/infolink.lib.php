@@ -61,9 +61,9 @@ function lib_infolink(&$ctag,&$refObj)
     $channelid = ( empty($refObj->TypeLink->TypeInfos['channeltype']) ? -8 : $refObj->TypeLink->TypeInfos['channeltype'] );
     
     $fields = array('nativeplace'=>'','infotype'=>'','typeid'=>$typeid,
-                    'channelid'=>$channelid,'linkallplace'=>'','linkalltype'=>'');
+                    'channelid'=>$channelid,'linkallplace'=>'','linkalltype'=>'','county'=>'');
     
-    $fields['nativeplace'] = $fields['infotype'] = '';
+    $fields['nativeplace'] = $fields['infotype'] = $fields['county'] = '';
     
     $fields['linkallplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&infotype={$infotype}'>不限</a>";
     $fields['linkalltype'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$nativeplace}'>不限</a>";
@@ -71,10 +71,20 @@ function lib_infolink(&$ctag,&$refObj)
     //地区链接
     if(empty($nativeplace))
     {
+		$fields['nativeplace'] = $fields['linkallplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&infotype={$infotype}'><b style='color:#f00;'>不限</b></a>";
         foreach($em_nativeplaces as $eid=>$em)
         {
-            if($eid % 500 != 0) continue;
-            $fields['nativeplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}&infotype={$infotype}'>{$em}</a>\r\n";
+			if($eid % 500 == 0)
+			{
+				$fields['linkallplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}&infotype={$infotype}'>{$em}</a>\r\n";
+			}
+			else
+			{
+				if($eid < 1000+499)
+				{
+					$fields['nativeplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}&infotype={$infotype}'>{$em}</a>\r\n";
+				}
+			}			
         }
     }
     else
@@ -82,17 +92,56 @@ function lib_infolink(&$ctag,&$refObj)
         $sontype = ( ($nativeplace % 500 != 0) ? $nativeplace : 0 );
         $toptype = ( ($nativeplace % 500 == 0) ? $nativeplace : ( $nativeplace-($nativeplace%500) ) );
 		//2011-6-21 修改地区列表的一个小空格 论坛http://bbs.dedecms.com/371492.html(by：织梦的鱼)
-        $fields['nativeplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$toptype}&infotype={$infotype}'> <b>{$em_nativeplaces[$toptype]}</b></a> &gt;&gt; ";
-        foreach($em_nativeplaces as $eid=>$em)
-        {
-            if($eid < $toptype+1 || $eid > $toptype+499) continue;
-            if($eid == $nativeplace) {
-                $fields['nativeplace'] .= " <b>{$em}</b>\r\n";
-            }
-            else {
-                $fields['nativeplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}&infotype={$infotype}'>{$em}</a>\r\n";
-          }
-      }
+		if($toptype == $nativeplace)
+		{
+			$fields['nativeplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$toptype}'><b style='color:#f00;'>不限</b></a> ";
+			$fields['linkallplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace=0'>不限</a> ";
+		}
+		else
+		{
+			$fields['nativeplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$toptype}'>不限</a> ";
+			$fields['linkallplace'] = "<a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace=0'>不限</a> ";
+		}
+		foreach($em_nativeplaces as $eid=>$em)
+		{
+			if($eid > 500 && $eid % 500 != 0)
+			{
+				if($eid < floor($toptype)+1 || $eid > floor($toptype)+499) continue;
+				if(!preg_match("#\.#", $eid))
+				{
+					if($nativeplace == $eid || floor($nativeplace) == $eid)
+					{
+						$fields['nativeplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'><b style='color:#f00;'>{$em}</b></a>";
+					}
+					else
+					{
+						$fields['nativeplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'>{$em}</a>";
+					}
+				}
+				if(preg_match("#\.#", $eid) && $eid < floor($nativeplace)+1 && $eid > floor($nativeplace))
+				{
+					if($nativeplace === $eid)
+					{
+						$fields['county'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'><b style='color:#f00;'>{$em}</b></a>";
+					}
+					else
+					{
+						$fields['county'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'>{$em}</a>";
+					}
+				}
+			}
+			else
+			{
+				if($eid == $nativeplace || $eid == $toptype || $eid == floor($toptype))
+				{
+					$fields['linkallplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'><b style='color:#f00;'>{$em}</b></a>";
+				}
+				else
+				{
+				   $fields['linkallplace'] .= " <a href='{$baseurl}plus/list.php?channelid={$channelid}&tid={$typeid}&nativeplace={$eid}'>{$em}</a>";
+				}
+			}
+		}
     }
     //小分类链接
     if(empty($infotype) || is_array($smalltypes))

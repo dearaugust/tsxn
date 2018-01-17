@@ -1,5 +1,0 @@
-INSERT INTO `dede_myppt` VALUES('1','1','0','首页轮播图-1','/uploads/allimg/171110/1-1G1100955500-L.jpg','','','');
-INSERT INTO `dede_myppt` VALUES('2','1','0','首页轮播图-2','/uploads/allimg/171110/1-1G1100956020-L.jpg','','','');
-INSERT INTO `dede_myppt` VALUES('3','1','0','首页轮播图-3','/uploads/allimg/171110/1-1G1100956140-L.jpg','','','');
-INSERT INTO `dede_myppt` VALUES('4','1','0','首页轮播图-4','/uploads/allimg/171110/1-1G1100956240-L.jpg','','','');
-INSERT INTO `dede_myppt` VALUES('5','2','0','浏览量大图','/uploads/allimg/171128/1-1G12Q552450-L.jpg','','','');

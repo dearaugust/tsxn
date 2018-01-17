@@ -20,10 +20,15 @@
   <!-- Owl Carousel  -->
   <link rel="stylesheet" href="/css/owl.carousel.min.css">
   <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/commonstyle.css"/>
+
+  <link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
   <!-- Theme style  -->
   <link rel="stylesheet" href="/css/style.css">
   <!-- Modernizr JS -->
   <script src="/js/modernizr-2.6.2.min.js"></script>
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
   <!-- FOR IE9 below -->
   <!--[if lt IE 9]>
 	<script src="/js/respond.min.js"></script>
@@ -41,9 +46,10 @@
     <aside id="fh5co-hero" class="js-fullheight">
       <div class="flexslider js-fullheight">
         <ul class="slides">
-          {dede:arclist typeid='1' row='' titlelen='50' channelid='17' addfields='bigpic' flag='f' isweight='' orderby='weight' orderway='asc'
-          limit=''}
-          <li style="background-image: url('[field:bigpic function=GetImgUrl(@me)/]');">
+          
+          <!-- <li style="background-image: url('[field:bigpic function=GetImgUrl(@me)/]');"> -->
+          {dede:myppt typeid=1 row=4}
+            <li style="background-image: url('[field:pic/]');">
             <!-- <div class="overlay-gradient"></div> -->
             <!-- <div class="container">
               <div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
@@ -59,7 +65,7 @@
               </div>
             </div> -->
           </li>
-          {/dede:arclist}
+          {/dede:myppt}
         </ul>
       </div>
     </aside>
@@ -67,14 +73,14 @@
     <div id="fh5co-services" class="fh5co-bg-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-sm-6">
+          <div class="col-md-12 col-sm-12">
             <div class="feature-center">
               {dede:type typeid=5}
               <div class="fh5co-heading">
                 <h2>[field:typename/]
                   <span>[field:typenamedir/]</span>
                 </h2>
-                <p>[field:content function=cn_substr(html2text(@me),1000)/]</p>
+                <div>[field:content function="cn_substr(@me,1250)"/]</div>
               </div>
               <p>
                 <a href="[field:typeurl/]" class="btn btn-primary btn-outline">了解更多</a>
@@ -82,43 +88,39 @@
               {/dede:type}
             </div>
           </div>
-          <div class="col-md-6 col-sm-6 text-center">
+          <!-- <div class="col-md-6 col-sm-6 text-center">
             <div class="feature-center">
               {dede:myppt typeid=5 row=1}
               <img src="[field:pic/]" alt="[field:title/]" style="width:100%;"> {/dede:myppt}
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 
     <div id="fh5co-dynamic" class="fh5co-bg fh5co-counter text-center">
-      {dede:arclist typeid='1' row='1' titlelen='50' channelid='17' addfields='body,slide' flag='h' isweight='' orderby='weight'
+      {dede:arclist typeid='1' row='1' titlelen='50' channelid='17' addfields='body2,slide,bigpic,bgc' flag='h' isweight='' orderby='weight'
       orderway='asc' limit=''}
-      <a href="[field:arcurl/]"><img src="[field:slide function=GetImgUrl(@me)/]" alt="[field:title/]" /></a>
-      <div class="fh5co-dynamic-main">
-        <div class="container">
+      <a href="[field:typeid function=mygetretype(@me,typeurl)/]"><img src="[field:slide function=GetImgUrl(@me)/]" alt="[field:title/]" /></a>
+      <div class="fh5co-dynamic-main" style="background-color:[field:bgc/]">
+        <img src="[field:bigpic function=GetImgUrl(@me)/]" alt="[field:title/]">
+        <!-- <div class="container">
           <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <h2>[field:title/]
                 <span>[field:typenamedir/]</span>
               </h2>
             </div>
-            <div class="col-md-12">[field:body function=cn_substr(html2text(@me),1000)/]</div>
+            <div class="col-md-12 hot-product"></div>
           </div>
-        </div>
+        </div> -->
       </div>
       {/dede:arclist}
     </div>
 
     <div id="fh5co-counter" class="fh5co-counter fh5co-bg" style="background-image:url('{dede:myppt typeid=4 row=1}[field:pic/]{/dede:myppt}');">
       <div class="container">
-        <!-- <div class="row animate-box">
-          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-            <span>new release</span>
-            <h2>产品</h2>
-          </div>
-        </div> -->
+
         <div class="row">
           <div class="col-md-12">
             <div class="row animate-box">
@@ -128,7 +130,7 @@
                 <div class="item">
                   <div class="testimony-slide active text-center">
                     <figure>
-                      <a href="[field:arcurl/]">
+                      <a href="[field:typeid function=mygetretype(@me,typeurl)/]">
                         <img src="[field:litpic/]" alt="[field:description function=cn_substr(@me,50)/]">
                       </a>
                     </figure>
@@ -181,14 +183,8 @@
     {dede:include filename="footer.htm"/}
   </div>
 
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop">
-      <i class="icon-arrow-up"></i>
-    </a>
-  </div>
+  <div id="top"></div>
 
-  <!-- jQuery -->
-  <script src="/js/jquery.min.js"></script>
   <!-- jQuery Easing -->
   <script src="/js/jquery.easing.1.3.js"></script>
   <!-- Bootstrap -->
@@ -203,6 +199,7 @@
   <script src="/js/jquery.flexslider-min.js"></script>
   <!-- Main -->
   <script src="/js/main.js"></script>
+  <script src="/js/gototop.js"></script>
 
   {dede:include filename="zidongzhuaqu.htm"/}
 </body>

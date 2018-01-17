@@ -20,6 +20,7 @@
 
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="/css/flexslider.css">
+	<link rel="stylesheet" type="text/css" href="/css/gototop.css"/>  
 
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -51,10 +52,10 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								{dede:type typeid=5}
+								<!-- {dede:type typeid=5}
 								<h1>[field:typenamedir/]</h1>
 								<h2>[field:typename/]</h2>
-								{/dede:type}
+								{/dede:type} -->
 							</div>
 						</div>
 					</div>
@@ -66,6 +67,7 @@
 			<div class="container">
 				<div class="about-content">
 					<div class="row animate-box">
+							<p style="text-align:right">当前位置：{dede:field.position/}</p>
 						{dede:type typeid=}
 						<div class="col-md-12">
 							<div class="desc">
@@ -106,11 +108,7 @@
 		{dede:include filename="footer.htm"/}
 	</div>
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop">
-			<i class="icon-arrow-up"></i>
-		</a>
-	</div>
+	<div id="top"></div>
 
 	<!-- jQuery -->
 	<script src="/js/jquery.min.js"></script>
