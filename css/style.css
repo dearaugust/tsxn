@@ -89,7 +89,7 @@ h5,
 h6,
 figure {
   color: #000;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "微软雅黑", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
@@ -312,7 +312,7 @@ figure {
   left: 0;
   text-align: left;
   background: #000;
-  padding: 20px;
+  padding: 18px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1226,7 +1226,7 @@ figure {
 }
 
 .fh5co-heading p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: #424242;
 }
@@ -1996,7 +1996,7 @@ figure {
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
   height: 54px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
 }
 

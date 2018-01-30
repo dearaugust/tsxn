@@ -8,7 +8,7 @@
   <title>{dede:global.cfg_webname/}</title>
   <meta name="keywords" content="{dede:global.cfg_keywords/}" />
   <meta name="description" content="{dede:global.cfg_description/}" />
-  <meta name="author" content="" />
+  <meta name="author" content="gettemplates.co" />
   <!-- Animate.css -->
   <link rel="stylesheet" href="/css/animate.css">
   <!-- Icomoon Icon Fonts-->
@@ -80,7 +80,7 @@
                 <h2>[field:typename/]
                   <span>[field:typenamedir/]</span>
                 </h2>
-                <div>[field:content function="cn_substr(@me,1250)"/]</div>
+                <div>[field:content function="cn_substr(@me,1248)"/]</div>
               </div>
               <p>
                 <a href="[field:typeurl/]" class="btn btn-primary btn-outline">了解更多</a>
@@ -101,9 +101,9 @@
     <div id="fh5co-dynamic" class="fh5co-bg fh5co-counter text-center">
       {dede:arclist typeid='1' row='1' titlelen='50' channelid='17' addfields='body2,slide,bigpic,bgc' flag='h' isweight='' orderby='weight'
       orderway='asc' limit=''}
-      <a href="[field:typeid function=mygetretype(@me,typeurl)/]"><img src="[field:slide function=GetImgUrl(@me)/]" alt="[field:title/]" /></a>
+      <a href="[field:typeid function=mygetretype(@me,typeurl)/]"><img src="[field:slide function=GetImgUrl(@me)/]" alt="[field:title/]" title="[field:title/]"/></a>
       <div class="fh5co-dynamic-main" style="background-color:[field:bgc/]">
-        <img src="[field:bigpic function=GetImgUrl(@me)/]" alt="[field:title/]">
+        <img src="[field:bigpic function=GetImgUrl(@me)/]" alt="[field:title/]" title="[field:title/]">
         <!-- <div class="container">
           <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -131,7 +131,7 @@
                   <div class="testimony-slide active text-center">
                     <figure>
                       <a href="[field:typeid function=mygetretype(@me,typeurl)/]">
-                        <img src="[field:litpic/]" alt="[field:description function=cn_substr(@me,50)/]">
+                        <img src="[field:litpic/]" alt="[field:description function=cn_substr(@me,50)/]" title="[field:description function=cn_substr(@me,50)/]">
                       </a>
                     </figure>
                     <span>[field:title/]</span>
@@ -172,7 +172,7 @@
               </div>
               <div class="col-md-6 news-img">
                 {dede:myppt typeid=3 row=1}
-                <img src="[field:pic/]" alt="[field:title/]"> {/dede:myppt}
+                <img src="[field:pic/]" alt="[field:title/]" title="[field:title/]"> {/dede:myppt}
               </div>
             </div>
           </div>

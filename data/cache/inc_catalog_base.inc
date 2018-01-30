@@ -11,9 +11,10 @@ $cfg_Cs[7]=array(6,1,0,'5YWs5Y+45paw6Ze7');
 $cfg_Cs[8]=array(6,1,0,'6KGM5Lia5paw6Ze7');
 $cfg_Cs[9]=array(6,1,0,'5aqS5L2T5paw6Ze7');
 $cfg_Cs[10]=array(0,1,0,'6IGU57O75oiR5Lus');
-$cfg_Cs[14]=array(5,1,1,'5YWz5LqO54Ov54mb');
+$cfg_Cs[14]=array(5,1,1,'5YWs5Y+45LuL57uN');
 $cfg_Cs[29]=array(5,1,1,'55+z5aKo54Ov5qaC5Ya1');
-$cfg_Cs[32]=array(0,1,0,'5oub5ZWG5Yqg55uf');
+$cfg_Cs[32]=array(0,1,1,'5oub5ZWG5Yqg55uf');
+$cfg_Cs[38]=array(32,1,1,'5oub5ZWG5Yqg55uf');
 $cfg_Cs[36]=array(32,-8,0,'57uP6ZSA5ZWG5LiO5Luj55CG5ZWG');
 $cfg_Cs[37]=array(0,1,0,'5qGI5L6L5bGV56S6');
 ?>
